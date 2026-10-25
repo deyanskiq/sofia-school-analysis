@@ -76,6 +76,7 @@ section { display: grid; gap: 22px; min-width: 0; }
 .verdict { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; padding: 18px 18px 18px 0; border-bottom: 1px solid var(--rule); align-content: start; }
 .verdict:nth-child(odd) { padding-right: 28px; }
 .verdict:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); }
+.verdict:last-child:nth-child(odd) { grid-column: 1 / -1; padding-right: 0; }
 .verdict .mark { grid-row: span 3; font-family: var(--f-display); font-weight: 800; font-size: 1.6rem; line-height: 1; color: var(--accent); min-width: 1.4ch; }
 .verdict .mark.red { color: var(--red); }
 .verdict h3 { font-size: 1.3rem; }
@@ -204,7 +205,7 @@ ul.plain li { overflow-wrap: anywhere; }
   <div class="inner">
     <span class="eyebrow">ПГ-6 · учебна 2027/28 · от Студентски град</span>
     <h1>Училища около Студентски град</h1>
-    <p class="lede">Сравнение на 8 частни и 8 държавни училища в радиус до 7 км от дома: реална годишна цена, какво влиза в таксата, колко време отнема воденето и кога се кандидатства.</p>
+    <p class="lede">Сравнение на 10 частни и 8 държавни училища в радиус до 7 км от дома: реална годишна цена, какво влиза в таксата, колко време отнема воденето и кога се кандидатства.</p>
     <div class="facts">
       <span class="fact"><b>Родена I.2021</b> → ПГ-6 от IX.2027, I клас от IX.2028</span>
       <span class="fact">I клас още от IX.2027 е възможен по желание на родителя</span>
@@ -216,7 +217,7 @@ ul.plain li { overflow-wrap: anywhere; }
 <section aria-labelledby="h-short">
   <div class="section-head">
     <span class="eyebrow">Накратко</span>
-    <h2 id="h-short">Четири реални варианта и кои отпадат</h2>
+    <h2 id="h-short">Реалните варианти и кои отпадат</h2>
   </div>
   <div class="verdicts">
     <article class="verdict">
@@ -244,6 +245,12 @@ ul.plain li { overflow-wrap: anywhere; }
       <p>Малки групи до 12 деца, без екрани в учебния процес, силен английски, прием през цялата година. Таксата за подготвителния клас не е публична; I клас струва €7,950 плюс €450 регистрация. По НВО е 39-то място, по-ниско от ЕСПА. Има и места, финансирани от държавата, без такса.</p>
     </article>
     <article class="verdict">
+      <span class="mark">Д</span>
+      <span class="tag">Канадска двуезична програма · ~4.1 км</span>
+      <h3>Maple Bear (Камбаните)</h3>
+      <p>€8,550 годишно на 2 вноски (€8,700 на 10), но без храна и униформа. Шах, пиано, роботика, футбол и айкидо се доплащат, а регистрацията и материалите са около €1,350 по вторичен източник. Има училищен транспорт. Не участва в класацията по НВО. Деца от градината им в кв. Витоша (~0.9 км от вас) имат предимство при прием. Ден на отворените врати: понеделник, 26 октомври, 17:30-18:30, с регистрация.</p>
+    </article>
+    <article class="verdict">
       <span class="mark red">✕</span>
       <span class="tag">Отпадат за ПГ-6</span>
       <h3>Наука за деца, Британика</h3>
@@ -252,8 +259,8 @@ ul.plain li { overflow-wrap: anywhere; }
     <article class="verdict">
       <span class="mark red">↔</span>
       <span class="tag">Силни, но далеч</span>
-      <h3>Света София, Образователни технологии</h3>
-      <p>„Света София“ е 2-ро място в София и €8,900 с храна и учебници, но е на 7 км на запад (транспорт €1,750 годишно). „Образователни технологии“ е €7,050 за I клас, на 5 км в Слатина.</p>
+      <h3>Света София, Питагор, Образователни технологии</h3>
+      <p>„Света София“ (2-ро място в София) и „Питагор“ (3-то) са сред най-силните частни училища, но и двете са на ~7 км на запад. „Света София“ е €8,900 с храна и учебници, плюс транспорт €1,750 годишно. „Питагор“ е около €7,580 без храна, с математически профил и училищен транспорт. „Образователни технологии“ е €7,050 за I клас, на 5 км в Слатина.</p>
     </article>
   </div>
   <p class="mine"><b>Моята преценка:</b> при цел „най-добро съотношение цена-качество“ реалният избор е между ЕСПА (по-скъпо, но почти всичко е на едно място и до 17:00) и 55 СУ плюс 2-3 занимания извън училище (около €8,000 по-евтино годишно само като пари, но с повече разкарване и несигурен прием). Виктор Юго е силен вариант само ако искате френски като основен език на образованието ѝ. Подай за държавна ПГ-6 като резервен вариант във всеки случай, защото е безплатно и не те задължава.</p>
@@ -265,6 +272,7 @@ ul.plain li { overflow-wrap: anywhere; }
     <h2 id="h-time">Какво да направиш и кога</h2>
   </div>
   <ol class="timeline">
+    <li class="now"><span class="when">Понеделник, 26 октомври 2026</span><span>Ден на отворените врати в Maple Bear на Камбаните (ул. Витошки камбани 9), 17:30-18:30. Изисква предварителна регистрация от сайта им.</span></li>
     <li class="now"><span class="when">Сега - ноември 2026</span><span>Провери на картата в системата за прием в I клас на Столична община кое е прилежащото училище за адреса ви. Поискай цената на подготвителния клас от Светлина (0895 560 647). Запиши се за информационна среща в ЕСПА: два пъти месечно, 17:30-19:00, до март.</span></li>
     <li><span class="when">Ноември 2026 - април 2027</span><span>Прием в ЕСПА: тридневна процедура с тестове по български, математика и английски, такса €300. В Британика по досегашните цикли заявките започват от средата на октомври, а класирането е след средата на януари.</span></li>
     <li><span class="when">Зима - пролет 2027</span><span>Записване във Виктор Юго за 2027/28 при свободни места. Провери календара им и дали има изискване за френски.</span></li>
@@ -335,7 +343,7 @@ ul.plain li { overflow-wrap: anywhere; }
         <span><i class="sw seg-time"></i>Време</span>
       </div>
       <div id="bars" class="chart"></div>
-      <p class="note">Без цена в графиката: „Петър Берон“ (таксите не са публикувани). Таксата на Светлина е по I клас, а на Британика е общата сума за първата година по вторичен източник.</p>
+      <p class="note">Без цена в графиката: „Петър Берон“ (таксите не са публикувани). Таксата на Светлина е по I клас, на Питагор е по вторичен източник, а на Британика е общата сума за първата година по вторичен източник.</p>
     </div>
   </div>
 </section>
@@ -354,7 +362,7 @@ ul.plain li { overflow-wrap: anywhere; }
         <label class="field row" for="x-teach"><span>Подаръци за учителите<br><small>празници и края на годината</small></span><input type="number" id="x-teach" min="0" step="10" value="40"></label>
         <label class="field row" for="x-trips">Екскурзии, театър, музеи<input type="number" id="x-trips" min="0" step="10" value="150"></label>
         <label class="field row" for="x-camp">Зелено училище или лагер<input type="number" id="x-camp" min="0" step="10" value="250"></label>
-        <label class="field row" for="x-supp"><span>Тетрадки, пособия, помагала<br><small>не се броят, където са в таксата: ЕСПА, Наука за деца, Света София</small></span><input type="number" id="x-supp" min="0" step="10" value="100"></label>
+        <label class="field row" for="x-supp"><span>Тетрадки, пособия, помагала<br><small>не се броят, където са в таксата: ЕСПА, Наука за деца, Света София, Питагор</small></span><input type="number" id="x-supp" min="0" step="10" value="100"></label>
         <label class="field row" for="x-gear">Униформа, спортен екип, раница, обувки<input type="number" id="x-gear" min="0" step="10" value="150"></label>
         <label class="field row" for="x-events">Тържества, костюми, снимки<input type="number" id="x-events" min="0" step="10" value="50"></label>
         <small class="note">Сумите са мои оценки, въведи своите. В частните училища лагерите и екскурзиите обикновено са по-скъпи.</small>
@@ -402,6 +410,7 @@ ul.plain li { overflow-wrap: anywhere; }
         <li>Таксата за ПГ-6 е публична само при ЕСПА. За Светлина и „Образователни технологии“ ползвам I клас, за Виктор Юго - CP (I клас по френската система).</li>
         <li>Таксите на Виктор Юго са от вторичен източник, който сам ги нарича ориентировъчни. Официалната таблица на училището е картинка, която не успях да отворя.</li>
         <li>При Британика приемам, че общата сума €13,950 включва храната.</li>
+        <li>Таксата на Питагор е по uchimsteb, защото сайтът на училището не се отвори. При Maple Bear таксата е от сайта на базата Камбаните, а регистрацията (€800) и материалите (€550) са от вторичен източник, даден за 5 клас.</li>
         <li>Прилежащият район на адреса не е проверен. Държавните училища в Младост вероятно имат свой район, който не включва Студентски град.</li>
         <li>„Включено“ се базира на сайтовете на училищата. Детайлите за Британика са от 2019/20 и трябва да се потвърдят.</li>
       </ul>
@@ -414,6 +423,8 @@ ul.plain li { overflow-wrap: anywhere; }
         <li><a href="https://www.international-schools-database.com/in/sofia/victor-hugo-lycee-francais-de-sofia/fees" target="_blank" rel="noopener">Виктор Юго - такси 2026/27 (ориентир)</a>, <a href="https://www.doris.school/schools/bulgaria/victor-hugo-lycee-francais-de-sofia" target="_blank" rel="noopener">doris.school</a>, <a href="https://vhugo.org/wp-content/uploads/2026/06/ORGANISATION-DE-LA-RENTREE-2026-FR.pdf" target="_blank" rel="noopener">график 2026</a></li>
         <li><a href="https://www.24chasa.bg/bulgaria/article/21100036" target="_blank" rel="noopener">„Наука за деца“ - прием</a>, <a href="https://izzi.academy/puk-apply-now/" target="_blank" rel="noopener">ПУК</a></li>
         <li><a href="https://www.svetasofia.com/finansovi-uslovia/" target="_blank" rel="noopener">„Света София“ - такси 2026/27</a></li>
+        <li><a href="https://pitagor-school.eu/taksi/" target="_blank" rel="noopener">„Питагор“ - такси (сайт)</a>, <a href="https://pitagor-school.eu/priem-podgotvitelna-grupa/" target="_blank" rel="noopener">прием в ПГ</a></li>
+        <li><a href="https://sofia-kambanite.maplebear.bg/" target="_blank" rel="noopener">Maple Bear - Камбаните</a>, <a href="https://sofia-school.maplebear.bg/priem/" target="_blank" rel="noopener">прием и ден на отворените врати</a>, <a href="https://www.international-schools-database.com/in/sofia/maple-bear-sofia/fees" target="_blank" rel="noopener">такси (вторичен източник)</a></li>
         <li><a href="https://britanica-parkschool.bg/conditions/" target="_blank" rel="noopener">Британика - условия</a>, <a href="https://britanica-parkschool.bg/apply/" target="_blank" rel="noopener">прием</a></li>
         <li><a href="https://uchimsteb.com/blog/%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8-%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B8-%D1%83%D1%87%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D0%B2-%D1%81%D0%BE%D1%84%D0%B8%D1%8F/" target="_blank" rel="noopener">Частни начални училища в София 2026/27 (uchimsteb)</a></li>
         <li><a href="https://www.adivedu.com/bg/blogs/klasatsiya-uchilishta-sofia-nvo-4-klas-2026" target="_blank" rel="noopener">Класация по НВО 4 клас 2026</a></li>
@@ -454,7 +465,7 @@ ul.plain li { overflow-wrap: anywhere; }
       inc: { eng: "inc", lang2: "paid", sport: "paid", music: "paid" }, paid: {},
       incSub: { eng: "двуезична среда", lang2: "по желание", sport: "клубове и лагери", music: "клубове" },
       note: "Групи до 12 деца, без екрани. Има места без такса по държавно финансиране." },
-    { id: "vh", name: "Виктор Юго", full: "Френски лицей „Виктор Юго“", grp: "near", area: "Симеоновско шосе 110", km: 0.4, rank: null, nvo: null,
+    { id: "vh", name: "Виктор Юго", full: "Френски лицей „Виктор Юго“", grp: "near", area: "Симеоновско шосе 110", km: 0.4, rank: null, nvo: null, prog: "френска програма",
       fee: 3463, feeEst: true, feeTxt: "~€3,463", feeSub: "CP (I клас по френската система); ориентир",
       food: null, foodTxt: "?", foodSub: "стол, цената не е публична",
       once: 2200, onceTxt: "€2,200", onceSub: "първоначално записване (2025/26: 3,800 лв.)",
@@ -507,7 +518,25 @@ ul.plain li { overflow-wrap: anywhere; }
       day: "8:40-16:45", admit: "кандидатстване за ПК и I клас; ~15 места в I клас",
       inc: { eng: "inc", lang2: "unk", sport: "inc", music: "unk" }, paid: {},
       incSub: { eng: "засилен", lang2: "", sport: "извънкласните на училището", music: "" },
-      note: "Транспорт €1,750 годишно." }
+      note: "Транспорт €1,750 годишно." },
+    { id: "pitagor", name: "Питагор", full: "ЧСУ „Питагор“", grp: "far", area: "Красна поляна 3, Никола Мушанов 147", km: 7.2, rank: 3, nvo: 94.47,
+      fee: 7580, feeEst: true, flagTxt: "Таксата е по вторичен източник", feeTxt: "~€7,580", feeSub: "при еднократно плащане (uchimsteb, 2026/27); сайтът не се отвори",
+      food: null, foodTxt: "?", foodSub: "доплаща се",
+      once: 0, onceTxt: "-", onceSub: "",
+      dep: "-", depSub: "",
+      day: "уточни", admit: "има прием в подготвителна група; тел. 02 423 2327",
+      inc: { eng: "unk", lang2: "unk", sport: "unk", music: "unk" }, paid: {},
+      incSub: { eng: "профил математика", lang2: "", sport: "", music: "" },
+      note: "Математически профил. Учебниците, медицинската и психологическата грижа са в таксата; униформа и екскурзии се доплащат. Има училищен транспорт." },
+    { id: "maple", name: "Maple Bear", full: "Maple Bear Sofia - Камбаните", grp: "far", area: "Малинова долина, Витошки камбани 9", km: 4.1, rank: null, nvo: null, nvoTxt: "няма в класацията", prog: "канадска програма",
+      fee: 8550, feeTxt: "€8,550", feeSub: "на 2 вноски; на 10 вноски €8,700",
+      food: null, foodTxt: "?", foodSub: "доплаща се (кетъринг Furisto)",
+      once: 1350, onceTxt: "~€1,350", onceSub: "регистрация €800 + материали €550 (вторичен източник)",
+      dep: "-", depSub: "",
+      day: "8:20-16:30, занимания до 17:20", admit: "посещение и среща с учителите; предимство за деца от градината им",
+      inc: { eng: "inc", lang2: "unk", sport: "paid", music: "paid" }, paid: {},
+      incSub: { eng: "двуезично, канадска методика", lang2: "", sport: "футбол, айкидо", music: "пиано" },
+      note: "Ден на отворените врати 26.10.2026, 17:30-18:30, с регистрация. Униформа и транспорт се доплащат." }
   ];
   var STATE = [
     ["s55", "55 СУ „Петко Каравелов“", "Дървеница, Дъбница 3", 2.4, 17, 87.15, "Ново крило за 300 деца от II.2026."],
@@ -531,7 +560,7 @@ ul.plain li { overflow-wrap: anywhere; }
       note: r[6] });
   });
 
-  var SUPP_INC = { espa: true, izzi: true, svsofia: true };
+  var SUPP_INC = { espa: true, izzi: true, svsofia: true, pitagor: true };
   var XKEYS = ["x-bday", "x-teach", "x-trips", "x-camp", "x-supp", "x-gear", "x-events"];
   var GROUPS = [["near", "Частни, до 2 км"], ["far", "Частни, по-далеч"], ["state", "Държавни"]];
   var DEFAULTS = { "on-eng": true, "p-eng": 115, "n-eng": 2, "on-sport": true, "p-sport": 67, "n-sport": 1, "on-music": true, "p-music": 124, "n-music": 1,
@@ -598,9 +627,9 @@ ul.plain li { overflow-wrap: anywhere; }
           (p["use-time"] ? seg("seg-time", c.timeCost, "Време " + Math.round(c.hours) + " ч") : "");
         var flags = [];
         if (s.blocked) flags.push('<span class="flag red">Не приема директно за ПГ-6</span>');
-        else if (s.feeEst) flags.push('<span class="flag">' + (s.id === "brit" ? "Обща сума от вторичен източник" : s.id === "vh" ? "Таксата е ориентировъчна" : "Таксата е по I клас") + "</span>");
+        else if (s.feeEst) flags.push('<span class="flag">' + (s.flagTxt ? s.flagTxt : s.id === "brit" ? "Обща сума от вторичен източник" : s.id === "vh" ? "Таксата е ориентировъчна" : "Таксата е по I клас") + "</span>");
         html += '<div class="bar-row' + (s.blocked ? " off" : "") + '">' +
-          '<div class="who"><b>' + s.name + "</b><span>" + s.km.toFixed(1) + " км · " + (s.rank ? s.rank + "-о място НВО" : "френска програма") + "</span></div>" +
+          '<div class="who"><b>' + s.name + "</b><span>" + s.km.toFixed(1) + " км · " + (s.rank ? s.rank + "-о място НВО" : s.prog) + "</span></div>" +
           '<div class="track" role="img" aria-label="' + s.full + ": " + eur(c.total) + '">' + segs + "</div>" +
           '<div class="tot num">' + eur(p["use-time"] ? c.total : c.money) + "<small>" + (p["use-time"] ? "пари " + eur(c.money) + " · " + Math.round(c.hours) + " ч" : "без времето") + "</small></div>" +
           flags.join("") + "</div>";
@@ -610,7 +639,7 @@ ul.plain li { overflow-wrap: anywhere; }
   }
 
   function nvoCell(s) {
-    if (!s.nvo) return '<span class="sub">не се явяват</span>';
+    if (!s.nvo) return '<span class="sub">' + (s.nvoTxt || "не се явяват") + "</span>";
     return '<div class="nvo"><span class="num">' + s.nvo.toFixed(2).replace(".", ",") + " · " + s.rank + "-о</span>" +
       '<span class="meter"><i style="width:' + Math.max(0, (s.nvo - 70) / 30 * 100).toFixed(1) + '%"></i></span></div>';
   }
