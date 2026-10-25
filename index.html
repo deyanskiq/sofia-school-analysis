@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Училища около Студентски град</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;500;600;700&family=Sofia+Sans+Condensed:wght@600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a school notebook page - ruled header with the red margin line, then summary, calculator, two reference tables, sources */
+:root {
+  --paper: #F5F7FB;
+  --sheet: #FFFFFF;
+  --ink: #16203A;
+  --muted: #5A6681;
+  --rule: #D8DFEC;
+  --accent: #2646A6;
+  --accent-soft: #8EA3E0;
+  --accent-wash: #E6ECFA;
+  --red: #B5332B;
+  --green: #2D7A4E;
+  --amber: #9A6200;
+  --slate: #7D879E;
+  --hatch: #B9C2D6;
+  --f-display: "Sofia Sans Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Sofia Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1320; --sheet: #151C2C; --ink: #E5EAF4; --muted: #9AA5BE; --rule: #283249;
+    --accent: #8FA7FF; --accent-soft: #4A5FA8; --accent-wash: #1C2643; --red: #FF8C82; --green: #74D09D;
+    --amber: #F0B54A; --slate: #8C96AD; --hatch: #3A4560; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1320; --sheet: #151C2C; --ink: #E5EAF4; --muted: #9AA5BE; --rule: #283249;
+  --accent: #8FA7FF; --accent-soft: #4A5FA8; --accent-wash: #1C2643; --red: #FF8C82; --green: #74D09D;
+  --amber: #F0B54A; --slate: #8C96AD; --hatch: #3A4560; color-scheme: dark;
+}
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 64px; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.08; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: 0.005em; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, input:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.eyebrow { font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.section-head { display: grid; gap: 8px; max-width: 70ch; }
+.section-head p { color: var(--muted); }
+section { display: grid; gap: 22px; min-width: 0; }
+
+/* Header: ruled notebook sheet with the red margin line */
+.sheet-head {
+  position: relative; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding-left: max(56px, calc(env(safe-area-inset-left, 0px) + 40px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 48px 36px;
+  background-color: var(--sheet);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px);
+  border-bottom: 1px solid var(--rule);
+}
+.sheet-head::before { content: ""; position: absolute; top: 0; bottom: 0; left: max(36px, calc(env(safe-area-inset-left, 0px) + 22px)); width: 2px; background: var(--red); opacity: 0.55; }
+.sheet-head .inner { display: grid; gap: 14px; max-width: 760px; }
+.sheet-head h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); font-weight: 800; }
+.sheet-head .lede { font-size: 1.1rem; max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 4px; }
+.fact { font-size: 0.9rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 3px 12px; }
+.fact b { font-weight: 600; }
+
+/* Verdict list */
+.verdicts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.verdict { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; padding: 18px 18px 18px 0; border-bottom: 1px solid var(--rule); align-content: start; }
+.verdict:nth-child(odd) { padding-right: 28px; }
+.verdict:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); }
+.verdict .mark { grid-row: span 3; font-family: var(--f-display); font-weight: 800; font-size: 1.6rem; line-height: 1; color: var(--accent); min-width: 1.4ch; }
+.verdict .mark.red { color: var(--red); }
+.verdict h3 { font-size: 1.3rem; }
+.verdict .tag { font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; }
+.verdict p { color: var(--ink); font-size: 0.97rem; max-width: 60ch; }
+.mine { font-size: 0.97rem; max-width: 72ch; padding: 16px 18px; background: var(--accent-wash); border-radius: 8px; }
+.mine b { font-weight: 700; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 2px solid var(--accent-soft); margin-left: 6px; }
+.timeline li { position: relative; padding: 0 0 18px 22px; display: grid; gap: 2px; max-width: 78ch; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--sheet); border: 2px solid var(--accent); }
+.timeline li.now::before { background: var(--accent); }
+.timeline .when { font-family: var(--f-data); font-size: 0.82rem; color: var(--accent); font-weight: 500; }
+
+/* Calculator */
+.calc { display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.controls { display: grid; gap: 18px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; min-width: 0; }
+legend { font-family: var(--f-data); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0; margin-bottom: 4px; }
+.act { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; padding-bottom: 10px; border-bottom: 1px dashed var(--rule); }
+.act:last-of-type { border-bottom: 0; padding-bottom: 0; }
+.act label.name { font-weight: 600; }
+.act .pair { grid-column: 2; display: flex; gap: 10px; flex-wrap: wrap; }
+.field { display: grid; gap: 3px; font-size: 0.85rem; color: var(--muted); }
+.field.row { grid-template-columns: 1fr auto; align-items: center; gap: 10px; color: var(--ink); font-size: 0.92rem; }
+.field small { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+input[type="number"] { width: 84px; font: inherit; font-family: var(--f-data); font-size: 0.9rem; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 4px 8px; font-variant-numeric: tabular-nums; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+.toggle { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; }
+.reset { justify-self: start; font: inherit; font-size: 0.85rem; color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+.reset:hover { background: var(--accent-wash); }
+
+.chart { display: grid; gap: 14px; min-width: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.82rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.seg-fee { background: var(--accent); }
+.seg-food { background: var(--accent-soft); }
+.seg-once { background: var(--slate); }
+.seg-extra { background: var(--amber); }
+.seg-time { background: repeating-linear-gradient(135deg, var(--hatch) 0 4px, transparent 4px 7px); border: 1px solid var(--hatch); }
+.group-label { font-family: var(--f-data); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 6px; border-top: 1px solid var(--rule); }
+.bar-row { display: grid; grid-template-columns: minmax(0, 170px) minmax(0, 1fr) minmax(0, 118px); gap: 6px 14px; align-items: center; }
+.bar-row .who { display: grid; gap: 1px; min-width: 0; }
+.bar-row .who b { font-weight: 600; font-size: 0.95rem; line-height: 1.2; }
+.bar-row .who span { font-size: 0.78rem; color: var(--muted); }
+.track { height: 22px; display: flex; border-radius: 3px; overflow: hidden; background: transparent; min-width: 0; }
+.track > i { display: block; height: 100%; min-width: 0; }
+.bar-row .tot { text-align: right; font-family: var(--f-data); font-size: 0.9rem; line-height: 1.25; }
+.bar-row .tot small { display: block; font-size: 0.74rem; color: var(--muted); }
+.bar-row.off { opacity: 0.55; }
+.bar-row .flag { grid-column: 2 / 4; font-size: 0.78rem; color: var(--amber); margin-top: -2px; }
+.bar-row .flag.red { color: var(--red); }
+.note { font-size: 0.85rem; color: var(--muted); max-width: 78ch; }
+
+/* Tables */
+.scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 0.88rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+thead th { font-family: var(--f-data); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); background: var(--paper); position: sticky; top: 0; }
+tbody tr.grp th { font-family: var(--f-display); font-size: 1rem; font-weight: 600; background: var(--accent-wash); color: var(--ink); padding-block: 6px; }
+td.school b { display: block; font-weight: 600; font-size: 0.95rem; }
+td.school span { color: var(--muted); font-size: 0.8rem; }
+td .sub { display: block; color: var(--muted); font-size: 0.78rem; line-height: 1.35; margin-top: 2px; }
+td.money { font-family: var(--f-data); font-variant-numeric: tabular-nums; min-width: 110px; max-width: 190px; }
+td.money > span:first-child { white-space: nowrap; }
+td.money .sub { font-family: var(--f-body); }
+td.school { min-width: 170px; }
+#t-money td:last-child { min-width: 200px; }
+#t-money td:nth-child(10) { min-width: 150px; }
+#t-money td:nth-child(6) { min-width: 150px; }
+#t-budget { min-width: 640px; }
+#t-budget td.big { font-family: var(--f-data); font-weight: 500; font-size: 1.02rem; white-space: nowrap; color: var(--accent); }
+.sumline { font-size: 0.92rem; padding-top: 12px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.sumline b { font-family: var(--f-data); font-weight: 500; }
+td .sub .chip { margin-top: 3px; }
+.nvo { display: grid; gap: 4px; min-width: 92px; }
+.nvo .meter { height: 5px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+.nvo .meter i { display: block; height: 100%; background: var(--accent); }
+.est { color: var(--amber); }
+.chip { display: inline-block; font-size: 0.74rem; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.chip.red { color: var(--red); }
+.chip.amber { color: var(--amber); }
+.chip.green { color: var(--green); }
+.cell { display: grid; grid-template-columns: 22px 1fr; gap: 6px; align-items: start; }
+.sym { font-family: var(--f-data); font-weight: 500; text-align: center; border-radius: 4px; line-height: 20px; height: 20px; font-size: 0.85rem; }
+.sym.inc { background: var(--green); color: var(--sheet); }
+.sym.paid { border: 1px solid var(--amber); color: var(--amber); }
+.sym.out { border: 1px solid var(--red); color: var(--red); }
+.sym.unk { border: 1px dashed var(--slate); color: var(--slate); }
+.keyrow { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.84rem; color: var(--muted); }
+.keyrow .cell { grid-template-columns: 22px auto; align-items: center; }
+
+/* Sources */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.cols > div { display: grid; gap: 10px; align-content: start; min-width: 0; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 0.9rem; }
+ul.plain li { overflow-wrap: anywhere; }
+
+@media (max-width: 860px) {
+  .calc { grid-template-columns: minmax(0, 1fr); }
+  .verdicts { grid-template-columns: minmax(0, 1fr); }
+  .verdict:nth-child(even) { padding-left: 0; border-left: 0; }
+  .verdict:nth-child(odd) { padding-right: 0; }
+  .cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .bar-row { grid-template-columns: minmax(0, 1fr) minmax(0, 104px); }
+  .bar-row .track { grid-column: 1 / -1; grid-row: 2; }
+  .bar-row .flag { grid-column: 1 / -1; }
+  .sheet-head { padding-left: max(44px, calc(env(safe-area-inset-left, 0px) + 30px)); }
+  .sheet-head::before { left: max(26px, calc(env(safe-area-inset-left, 0px) + 14px)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .track > i { transition: width 0.35s ease; }
+}
+</style>
+
+</head>
+<body>
+<div lang="bg">
+<div class="wrap">
+
+<header class="sheet-head">
+  <div class="inner">
+    <span class="eyebrow">ПГ-6 · учебна 2027/28 · от Студентски град</span>
+    <h1>Училища около Студентски град</h1>
+    <p class="lede">Сравнение на 8 частни и 8 държавни училища в радиус до 7 км от дома: реална годишна цена, какво влиза в таксата, колко време отнема воденето и кога се кандидатства.</p>
+    <div class="facts">
+      <span class="fact"><b>Родена I.2021</b> → ПГ-6 от IX.2027, I клас от IX.2028</span>
+      <span class="fact">I клас още от IX.2027 е възможен по желание на родителя</span>
+      <span class="fact">Цени: публикуваните за 2026/27</span>
+    </div>
+  </div>
+</header>
+
+<section aria-labelledby="h-short">
+  <div class="section-head">
+    <span class="eyebrow">Накратко</span>
+    <h2 id="h-short">Четири реални варианта и кои отпадат</h2>
+  </div>
+  <div class="verdicts">
+    <article class="verdict">
+      <span class="mark">А</span>
+      <span class="tag">Най-пълен пакет наблизо · ~0.8 км</span>
+      <h3>ЕСПА</h3>
+      <p>Английски всеки ден с час при носител на езика, втори език (немски или испански), плуване и катерене са в таксата, денят е до 17:00. ПГ-6 с храна е €10,090 по цените за 2026/27, плюс €300 за приема и €1,500 гаранционна вноска. Режимът е строг: входни тестове, отсъствия само по болест, задължителни родителски срещи. 11-то място в София по НВО 4 клас.</p>
+    </article>
+    <article class="verdict">
+      <span class="mark">Б</span>
+      <span class="tag">Най-евтиният частен · ~0.4 км</span>
+      <h3>Френски лицей „Виктор Юго“</h3>
+      <p>Около €3,500 годишно плюс €2,200 първоначално записване. По френската система родено през 2021 дете влиза направо в CP (I клас) през 2027. Изборът е за френска програма за много години напред: в сряда учат до обед, а детето ще започне френски от нулата. Условията за прием на дете без френски трябва да се уточнят с училището.</p>
+    </article>
+    <article class="verdict">
+      <span class="mark">В</span>
+      <span class="tag">Най-доброто безплатно наблизо · ~2.4 км</span>
+      <h3>55 СУ „Петко Каравелов“</h3>
+      <p>17-то място в София по НВО 4 клас, ново крило за 300 деца от февруари 2026. Таксата е 0, но английски, спорт и пиано се плащат отделно (около €2,750 годишно по пазарни цени за 2026/27) и изискват водене до различни места. Приемът в I клас е по адрес: провери дали адресът ви попада в прилежащия район.</p>
+    </article>
+    <article class="verdict">
+      <span class="mark">Г</span>
+      <span class="tag">По-мек подход · ~0.8 км</span>
+      <h3>Светлина</h3>
+      <p>Малки групи до 12 деца, без екрани в учебния процес, силен английски, прием през цялата година. Таксата за подготвителния клас не е публична; I клас струва €7,950 плюс €450 регистрация. По НВО е 39-то място, по-ниско от ЕСПА. Има и места, финансирани от държавата, без такса.</p>
+    </article>
+    <article class="verdict">
+      <span class="mark red">✕</span>
+      <span class="tag">Отпадат за ПГ-6</span>
+      <h3>Наука за деца, Британика</h3>
+      <p>„Наука за деца“ е 1-во място в София, но не приема директно в ПУК2 и I клас. Единственият вход е ПУК1, т.е. още тази учебна година, ако има място. Британика е 7-ма по НВО, но първата година излиза около €13,950.</p>
+    </article>
+    <article class="verdict">
+      <span class="mark red">↔</span>
+      <span class="tag">Силни, но далеч</span>
+      <h3>Света София, Образователни технологии</h3>
+      <p>„Света София“ е 2-ро място в София и €8,900 с храна и учебници, но е на 7 км на запад (транспорт €1,750 годишно). „Образователни технологии“ е €7,050 за I клас, на 5 км в Слатина.</p>
+    </article>
+  </div>
+  <p class="mine"><b>Моята преценка:</b> при цел „най-добро съотношение цена-качество“ реалният избор е между ЕСПА (по-скъпо, но почти всичко е на едно място и до 17:00) и 55 СУ плюс 2-3 занимания извън училище (около €8,000 по-евтино годишно само като пари, но с повече разкарване и несигурен прием). Виктор Юго е силен вариант само ако искате френски като основен език на образованието ѝ. Подай за държавна ПГ-6 като резервен вариант във всеки случай, защото е безплатно и не те задължава.</p>
+</section>
+
+<section aria-labelledby="h-time">
+  <div class="section-head">
+    <span class="eyebrow">Срокове</span>
+    <h2 id="h-time">Какво да направиш и кога</h2>
+  </div>
+  <ol class="timeline">
+    <li class="now"><span class="when">Сега - ноември 2026</span><span>Провери на картата в системата за прием в I клас на Столична община кое е прилежащото училище за адреса ви. Поискай цената на подготвителния клас от Светлина (0895 560 647). Запиши се за информационна среща в ЕСПА: два пъти месечно, 17:30-19:00, до март.</span></li>
+    <li><span class="when">Ноември 2026 - април 2027</span><span>Прием в ЕСПА: тридневна процедура с тестове по български, математика и английски, такса €300. В Британика по досегашните цикли заявките започват от средата на октомври, а класирането е след средата на януари.</span></li>
+    <li><span class="when">Зима - пролет 2027</span><span>Записване във Виктор Юго за 2027/28 при свободни места. Провери календара им и дали има изискване за френски.</span></li>
+    <li><span class="when">Края на март - май 2027</span><span>Подай за ПГ-6 в държавно училище през kg.sofia.bg. През 2026 желанията се подреждаха от 30 март до 7 май, а първото класиране беше на 8 май. Ако не я приемат в общинска ПГ, при частна може да получиш компенсация до €296.55 на месец (предложено е €320 от 1.08.2026) срещу доказани разходи.</span></li>
+    <li><span class="when">Септември 2027</span><span>Старт на ПГ-6. Ако тя е готова, по желание на родителя може да тръгне направо в I клас. През 2025 в София са кандидатствали 476 шестгодишни.</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-calc">
+  <div class="section-head">
+    <span class="eyebrow">Калкулатор</span>
+    <h2 id="h-calc">Реална цена за първата година</h2>
+    <p>Такса, храна и еднократни разходи плюс заниманията, които в държавно училище плащаш отделно, и времето за водене. Сменяй стойностите вляво, за да видиш как се подреждат училищата. Депозитите не са включени, защото се връщат.</p>
+  </div>
+  <div class="calc">
+    <form class="controls" id="controls" autocomplete="off">
+      <fieldset>
+        <legend>Занимания, които искаш</legend>
+        <div class="act">
+          <input type="checkbox" id="on-eng" checked>
+          <label class="name" for="on-eng">Английски</label>
+          <div class="pair">
+            <label class="field" for="p-eng">€ на месец<input type="number" id="p-eng" min="0" step="1" value="115"></label>
+            <label class="field" for="n-eng">пъти седмично<input type="number" id="n-eng" min="0" max="7" step="1" value="2"></label>
+          </div>
+        </div>
+        <div class="act">
+          <input type="checkbox" id="on-sport" checked>
+          <label class="name" for="on-sport">Спорт (гимнастика, плуване)</label>
+          <div class="pair">
+            <label class="field" for="p-sport">€ на месец<input type="number" id="p-sport" min="0" step="1" value="67"></label>
+            <label class="field" for="n-sport">пъти седмично<input type="number" id="n-sport" min="0" max="7" step="1" value="1"></label>
+          </div>
+        </div>
+        <div class="act">
+          <input type="checkbox" id="on-music" checked>
+          <label class="name" for="on-music">Пиано</label>
+          <div class="pair">
+            <label class="field" for="p-music">€ на месец<input type="number" id="p-music" min="0" step="1" value="124"></label>
+            <label class="field" for="n-music">пъти седмично<input type="number" id="n-music" min="0" max="7" step="1" value="1"></label>
+          </div>
+        </div>
+        <small class="note">Цени по подразбиране: английски в група до 5 деца (Елеазар), пиано 45 мин. в My Music Center в Студентски, спорт по цената за плуване с външен треньор в ЕСПА. Плащане за 9 месеца.</small>
+      </fieldset>
+      <fieldset>
+        <legend>Време</legend>
+        <label class="toggle" for="use-time"><input type="checkbox" id="use-time" checked> Брой времето за водене в цената</label>
+        <label class="field row" for="rate">Колко струва час от твоето време, €<input type="number" id="rate" min="0" step="1" value="20"></label>
+        <label class="field row" for="trip">Часове на едно занимание извън училище<input type="number" id="trip" min="0" step="0.25" value="1"></label>
+        <label class="field row" for="minkm">Минути на км в една посока<input type="number" id="minkm" min="0" step="0.5" value="3"></label>
+        <small class="note">Всеки ден по 4 отсечки (водене и вземане, отиване и връщане), всяка по 4 мин. плюс минутите на км. 170 учебни дни, 34 седмици.</small>
+      </fieldset>
+      <fieldset>
+        <legend>Допускания</legend>
+        <label class="field row" for="infl">Поскъпване за 2027/28, %<input type="number" id="infl" min="0" max="50" step="1" value="6"></label>
+        <label class="field row" for="food-p">Храна в частно, ако цената не е публична, € на ден<input type="number" id="food-p" min="0" step="0.5" value="8"></label>
+        <label class="field row" for="food-s">Храна в държавно, € на ден<input type="number" id="food-s" min="0" step="0.5" value="3"></label>
+        <small class="note">Двете цени за храна са мои предположения. В държавно може да е по-евтино или безплатно, уточни в училището.</small>
+      </fieldset>
+      <button type="button" class="reset" id="reset">Върни стойностите по подразбиране</button>
+    </form>
+    <div class="chart">
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw seg-fee"></i>Такса</span>
+        <span><i class="sw seg-food"></i>Храна</span>
+        <span><i class="sw seg-once"></i>Еднократно</span>
+        <span><i class="sw seg-extra"></i>Занимания</span>
+        <span><i class="sw seg-time"></i>Време</span>
+      </div>
+      <div id="bars" class="chart"></div>
+      <p class="note">Без цена в графиката: „Петър Берон“ (таксите не са публикувани). Таксата на Светлина е по I клас, а на Британика е общата сума за първата година по вторичен източник.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-budget">
+  <div class="section-head">
+    <span class="eyebrow">Месечен бюджет</span>
+    <h2 id="h-budget">Колко ще ти трябват на месец</h2>
+    <p>Годишните разходи за 2027/28, разделени на 12 месеца: такса и храна, заниманията от калкулатора, които не влизат в таксата, и обичайните допълнителни разходи. Времето не е включено, тук са само парите. Еднократните суми при записване са отделно, защото се плащат веднъж.</p>
+  </div>
+  <div class="calc">
+    <form class="controls" id="xform" autocomplete="off">
+      <fieldset>
+        <legend>Допълнителни разходи, € на година</legend>
+        <label class="field row" for="x-bday"><span>Подаръци за рождени дни на съученици<br><small>напр. 20 рождени дни × €5</small></span><input type="number" id="x-bday" min="0" step="10" value="100"></label>
+        <label class="field row" for="x-teach"><span>Подаръци за учителите<br><small>празници и края на годината</small></span><input type="number" id="x-teach" min="0" step="10" value="40"></label>
+        <label class="field row" for="x-trips">Екскурзии, театър, музеи<input type="number" id="x-trips" min="0" step="10" value="150"></label>
+        <label class="field row" for="x-camp">Зелено училище или лагер<input type="number" id="x-camp" min="0" step="10" value="250"></label>
+        <label class="field row" for="x-supp"><span>Тетрадки, пособия, помагала<br><small>не се броят, където са в таксата: ЕСПА, Наука за деца, Света София</small></span><input type="number" id="x-supp" min="0" step="10" value="100"></label>
+        <label class="field row" for="x-gear">Униформа, спортен екип, раница, обувки<input type="number" id="x-gear" min="0" step="10" value="150"></label>
+        <label class="field row" for="x-events">Тържества, костюми, снимки<input type="number" id="x-events" min="0" step="10" value="50"></label>
+        <small class="note">Сумите са мои оценки, въведи своите. В частните училища лагерите и екскурзиите обикновено са по-скъпи.</small>
+      </fieldset>
+      <p class="sumline"><span>Общо допълнителни:</span><b id="x-total">€840</b><span>на година ·</span><b id="x-month">€70</b><span>на месец</span></p>
+    </form>
+    <div class="scroll"><table id="t-budget"></table></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-money">
+  <div class="section-head">
+    <span class="eyebrow">Справка 1</span>
+    <h2 id="h-money">Пари, разстояние и прием</h2>
+    <p>„Средно на месец“ е (такса + храна) ÷ 12 по цените за 2026/27, без еднократните суми. Етикетът под сумата казва дали храната е включена. Разстоянията са по права линия от дома. НВО е средният резултат по БЕЛ и математика в 4 клас през 2026 и мястото сред 174 училища в София. При частните резултатите са по-високи и заради приемните тестове.</p>
+  </div>
+  <div class="scroll"><table id="t-money"></table></div>
+</section>
+
+<section aria-labelledby="h-inc">
+  <div class="section-head">
+    <span class="eyebrow">Справка 2</span>
+    <h2 id="h-inc">Какво влиза в таксата</h2>
+    <p>Това определя дали детето прави всичко на едно място или трябва да го водиш на различни адреси след училище.</p>
+  </div>
+  <div class="keyrow">
+    <span class="cell"><span class="sym inc">✓</span>включено</span>
+    <span class="cell"><span class="sym paid">€</span>в училището, срещу доплащане</span>
+    <span class="cell"><span class="sym out">✕</span>извън училище</span>
+    <span class="cell"><span class="sym unk">?</span>не е ясно от публичните данни</span>
+  </div>
+  <div class="scroll"><table id="t-inc"></table></div>
+</section>
+
+<section aria-labelledby="h-src">
+  <div class="section-head">
+    <span class="eyebrow">Допускания и източници</span>
+    <h2 id="h-src">Откъде са числата</h2>
+  </div>
+  <div class="cols">
+    <div>
+      <h3>Допускания</h3>
+      <ul class="plain">
+        <li>Цените са публикуваните за 2026/27. За 2027/28 калкулаторът добавя поскъпване, което задаваш ти. ЕСПА изрично си запазва правото да актуализира таксите.</li>
+        <li>Таксата за ПГ-6 е публична само при ЕСПА. За Светлина и „Образователни технологии“ ползвам I клас, за Виктор Юго - CP (I клас по френската система).</li>
+        <li>Таксите на Виктор Юго са от вторичен източник, който сам ги нарича ориентировъчни. Официалната таблица на училището е картинка, която не успях да отворя.</li>
+        <li>При Британика приемам, че общата сума €13,950 включва храната.</li>
+        <li>Прилежащият район на адреса не е проверен. Държавните училища в Младост вероятно имат свой район, който не включва Студентски град.</li>
+        <li>„Включено“ се базира на сайтовете на училищата. Детайлите за Британика са от 2019/20 и трябва да се потвърдят.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Източници</h3>
+      <ul class="plain">
+        <li><a href="https://espa.bg/wp-content/uploads/2026/10/taksi-2026-2027-uchilishte-aktualiziran.pdf" target="_blank" rel="noopener">ЕСПА - такси училище и ПГ 2026/27</a>, <a href="https://espa.bg/podgotvitelen-klas-3/" target="_blank" rel="noopener">подготвителен клас</a>, <a href="https://espa.bg/kandidatstvane-i-priemna-protsedura/" target="_blank" rel="noopener">прием</a></li>
+        <li><a href="https://svetlina.net/school/taksi-i-finansovi-usloviq/" target="_blank" rel="noopener">Светлина - такси училище</a>, <a href="https://svetlina.net/garden/podgotvitelen-klas/" target="_blank" rel="noopener">подготвителен клас</a>, <a href="https://svetlina.net/garden/kak-da-kandidatstvate/" target="_blank" rel="noopener">прием</a>, <a href="https://svetlina.net/durjavno-finansirane/" target="_blank" rel="noopener">държавно финансиране</a></li>
+        <li><a href="https://www.international-schools-database.com/in/sofia/victor-hugo-lycee-francais-de-sofia/fees" target="_blank" rel="noopener">Виктор Юго - такси 2026/27 (ориентир)</a>, <a href="https://www.doris.school/schools/bulgaria/victor-hugo-lycee-francais-de-sofia" target="_blank" rel="noopener">doris.school</a>, <a href="https://vhugo.org/wp-content/uploads/2026/06/ORGANISATION-DE-LA-RENTREE-2026-FR.pdf" target="_blank" rel="noopener">график 2026</a></li>
+        <li><a href="https://www.24chasa.bg/bulgaria/article/21100036" target="_blank" rel="noopener">„Наука за деца“ - прием</a>, <a href="https://izzi.academy/puk-apply-now/" target="_blank" rel="noopener">ПУК</a></li>
+        <li><a href="https://www.svetasofia.com/finansovi-uslovia/" target="_blank" rel="noopener">„Света София“ - такси 2026/27</a></li>
+        <li><a href="https://britanica-parkschool.bg/conditions/" target="_blank" rel="noopener">Британика - условия</a>, <a href="https://britanica-parkschool.bg/apply/" target="_blank" rel="noopener">прием</a></li>
+        <li><a href="https://uchimsteb.com/blog/%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8-%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B8-%D1%83%D1%87%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-%D0%B2-%D1%81%D0%BE%D1%84%D0%B8%D1%8F/" target="_blank" rel="noopener">Частни начални училища в София 2026/27 (uchimsteb)</a></li>
+        <li><a href="https://www.adivedu.com/bg/blogs/klasatsiya-uchilishta-sofia-nvo-4-klas-2026" target="_blank" rel="noopener">Класация по НВО 4 клас 2026</a></li>
+        <li><a href="https://www.sofia.bg/bg/web/guest/w/6412038" target="_blank" rel="noopener">Столична община - прием в I клас и групи по адрес</a>, <a href="https://www.bta.bg/bg/videos/30382" target="_blank" rel="noopener">новото крило на 55 СУ</a></li>
+        <li><a href="https://stolica.bg/stolichna-obshtina/do-320-evro-za-neprieto-v-detska-gradina-dete-kakvo-se-promenya-za-roditelite-v-sofiya" target="_blank" rel="noopener">Компенсации за неприети деца</a>, <a href="https://150ou.org/podgotvitelna-grupa/" target="_blank" rel="noopener">пример за ПГ в държавно училище</a></li>
+        <li><a href="https://eleazar.co.uk/angliiski-za-deca-ceni/" target="_blank" rel="noopener">Английски за деца - цени</a>, <a href="https://mymusic.center/product/piano/" target="_blank" rel="noopener">Пиано в Студентски - цени</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var DAYS = 170, WEEKS = 34, MONTHS = 9, LEG_FIX = 4;
+  var ACTS = ["eng", "sport", "music"];
+
+  // inc codes: inc = included, paid = in school for extra money, out = outside school, unk = unclear (costed like outside)
+  var SCHOOLS = [
+    { id: "espa", name: "ЕСПА", full: "ЧСУ „ЕСПА“", grp: "near", area: "Симеоновско шосе 53 / Проф. Кирил Попов 13", km: 0.8, rank: 11, nvo: 88.63,
+      fee: 8190, feeTxt: "€8,190", feeSub: "ПГ-6 при плащане до 31.08; на 2 вноски €8,520, на 4 - €8,680",
+      food: 1900, foodTxt: "€1,900", foodSub: "3 хранения; на вноски до €2,080",
+      once: 300, onceTxt: "€300", onceSub: "приемна процедура, невъзвратима",
+      dep: "€1,500", depSub: "до VII клас, приспада се накрая; губи се при напускане без писмено предизвестие",
+      day: "8:30-17:00", admit: "XI-IV; тестове по БЕЛ, математика, английски",
+      inc: { eng: "inc", lang2: "inc", sport: "inc", music: "paid" }, paid: { music: 660 },
+      incSub: { eng: "всеки ден + час с носител", lang2: "немски или испански", sport: "плуване 1×/седм., катерене, шахмат", music: "пиано €330/срок" },
+      note: "Строг режим: отсъствия само по болест или веднъж годишно с молба." },
+    { id: "svetlina", name: "Светлина", full: "ЧДГ и ЧОУ „Светлина“", grp: "near", area: "кв. Витоша, Симеоновско шосе 59", km: 0.8, rank: 39, nvo: 83.74,
+      fee: 7950, feeEst: true, feeTxt: "€7,950*", feeSub: "*I клас; за ПК не е публична. Или 10×€843",
+      food: null, foodTxt: "?", foodSub: "доплаща се, цената не е публична",
+      once: 0, onceTxt: "€450", onceSub: "регистрация при I клас; + €250/год. материали",
+      dep: "1 мес. такса", depSub: "пази мястото в ПК",
+      day: "8:00-17:00 (ПК)", admit: "целогодишно; среща с родителите",
+      inc: { eng: "inc", lang2: "paid", sport: "paid", music: "paid" }, paid: {},
+      incSub: { eng: "двуезична среда", lang2: "по желание", sport: "клубове и лагери", music: "клубове" },
+      note: "Групи до 12 деца, без екрани. Има места без такса по държавно финансиране." },
+    { id: "vh", name: "Виктор Юго", full: "Френски лицей „Виктор Юго“", grp: "near", area: "Симеоновско шосе 110", km: 0.4, rank: null, nvo: null,
+      fee: 3463, feeEst: true, feeTxt: "~€3,463", feeSub: "CP (I клас по френската система); ориентир",
+      food: null, foodTxt: "?", foodSub: "стол, цената не е публична",
+      once: 2200, onceTxt: "€2,200", onceSub: "първоначално записване (2025/26: 3,800 лв.)",
+      dep: "-", depSub: "",
+      day: "8:30-15:30, ср до 12:00", admit: "при свободни места; според националност и предишно обучение",
+      inc: { eng: "unk", lang2: "inc", sport: "out", music: "out" }, paid: {},
+      incSub: { eng: "не е потвърдено", lang2: "френски е основният език", sport: "физическо по програма", music: "" },
+      note: "Френска национална програма, ~80% френски учители. Има стол, занималня и транспорт, цените не са публични." },
+    { id: "izzi", name: "Наука за деца", full: "ЧСУ „Наука за деца“ (Izzi)", grp: "near", area: "кв. Витоша, Ангел Каралийчев 10", km: 1.0, rank: 1, nvo: 96.53, blocked: true,
+      fee: 8100, feeTxt: "€8,100", feeSub: "I-III клас с храна и материали; ПУК не е публична",
+      food: 0, foodTxt: "в таксата", foodSub: "",
+      once: 0, onceTxt: "-", onceSub: "",
+      dep: "-", depSub: "",
+      day: "8:00-18:30", admit: "няма директен прием в ПУК2 и I клас",
+      inc: { eng: "inc", lang2: "unk", sport: "unk", music: "unk" }, paid: {},
+      incSub: { eng: "двуезично, Cambridge", lang2: "", sport: "", music: "" },
+      note: "Вход само през ПУК1 (5 г.), т.е. тази учебна година. Смесени отзиви: 3.2/5 в Google (168)." },
+    { id: "brit", name: "Британика", full: "ЧСЕУ „Британика“ - Park School", grp: "near", area: "Драгалевци, Момино венче 27", km: 1.9, rank: 7, nvo: 90.78,
+      fee: 13950, feeEst: true, feeTxt: "~€13,950", feeSub: "обща сума за 1-вата година (uchimsteb)",
+      food: 0, foodTxt: "в сумата?", foodSub: "допускане",
+      once: 0, onceTxt: "-", onceSub: "",
+      dep: "?", depSub: "",
+      day: "8:00-16:30", admit: "тест за готовност, социални умения, интервю",
+      inc: { eng: "inc", lang2: "unk", sport: "paid", music: "unk" }, paid: {},
+      incSub: { eng: "интензивен", lang2: "", sport: "тенис, плуване, худ. гимнастика", music: "" },
+      note: "Данните за заниманията са от 2019/20." },
+    { id: "beron", name: "Петър Берон", full: "ЧДГ и ЧОУ „Д-р Петър Берон“", grp: "near", area: "Кръстова вада, Флора Кънева 14", km: 1.8, rank: 38, nvo: 83.80, nofee: true,
+      fee: null, feeTxt: "по запитване", feeSub: "0879 070 270",
+      food: null, foodTxt: "?", foodSub: "",
+      once: 0, onceTxt: "?", onceSub: "",
+      dep: "?", depSub: "",
+      day: "8:00-18:00", admit: "заявка, среща, договор",
+      inc: { eng: "inc", lang2: "unk", sport: "unk", music: "unk" }, paid: {},
+      incSub: { eng: "английска програма", lang2: "", sport: "балет, футбол, ски", music: "музика" },
+      note: "Детска градина и училище в съседни сгради." },
+    { id: "obrteh", name: "Образователни технологии", full: "ЧОУ „Образователни технологии“", grp: "far", area: "Гео Милев 158, Слатина", km: 5.2, rank: 29, nvo: 84.77,
+      fee: 7050, feeEst: true, feeTxt: "€7,050*", feeSub: "*I клас; ПГ не е посочена",
+      food: null, foodTxt: "?", foodSub: "",
+      once: 0, onceTxt: "-", onceSub: "",
+      dep: "-", depSub: "",
+      day: "7:30-17:00", admit: "възможно 3-дневно пробно посещение",
+      inc: { eng: "inc", lang2: "unk", sport: "unk", music: "unk" }, paid: {},
+      incSub: { eng: "материалите се доплащат", lang2: "", sport: "", music: "" },
+      note: "Транспорт и екскурзии се доплащат." },
+    { id: "svsofia", name: "Света София", full: "ЧОУ „Света София“", grp: "far", area: "Гърдова глава, Морени 7", km: 7.3, rank: 2, nvo: 94.91,
+      fee: 8900, feeTxt: "€8,900", feeSub: "ПК-III клас, с храна и учебници; на 2 вноски същото",
+      food: 0, foodTxt: "в таксата", foodSub: "плодова закуска, обяд, следобедна закуска",
+      once: 40, onceTxt: "€40", onceSub: "кандидатстване",
+      dep: "-", depSub: "",
+      day: "8:40-16:45", admit: "кандидатстване за ПК и I клас; ~15 места в I клас",
+      inc: { eng: "inc", lang2: "unk", sport: "inc", music: "unk" }, paid: {},
+      incSub: { eng: "засилен", lang2: "", sport: "извънкласните на училището", music: "" },
+      note: "Транспорт €1,750 годишно." }
+  ];
+  var STATE = [
+    ["s55", "55 СУ „Петко Каравелов“", "Дървеница, Дъбница 3", 2.4, 17, 87.15, "Ново крило за 300 деца от II.2026."],
+    ["s128", "128 СУ „Алберт Айнщайн“", "Младост 2", 2.7, 28, 84.80, ""],
+    ["s64", "64 ОУ „Цар Симеон Велики“", "Симеоново", 2.9, 61, 81.02, ""],
+    ["s8", "8 СУ „Васил Левски“", "Младост 1", 3.1, 14, 87.83, ""],
+    ["s125", "125 СУ „Проф. Боян Пенев“", "Младост 1", 3.5, 18, 86.63, ""],
+    ["s131", "131 СУ „К. А. Тимирязев“", "Младост 4", 3.6, 16, 87.21, ""],
+    ["s107", "107 ОУ „Хан Крум“", "Лозенец", 3.8, 23, 85.55, ""],
+    ["s145", "145 ОУ „Симеон Радев“", "Младост 1А", 3.9, 13, 87.90, ""]
+  ];
+  STATE.forEach(function (r) {
+    SCHOOLS.push({ id: r[0], name: r[1].split(" „")[0], full: r[1], grp: "state", area: r[2], km: r[3], rank: r[4], nvo: r[5],
+      fee: 0, feeTxt: "€0", feeSub: "",
+      food: null, foodTxt: "?", foodSub: "уточни в училището",
+      once: 0, onceTxt: "-", onceSub: "",
+      dep: "-", depSub: "",
+      day: "ПГ и занималня до ~17:30", admit: "ПГ: kg.sofia.bg; I клас: по адрес",
+      inc: { eng: "out", lang2: "out", sport: "out", music: "out" }, paid: {},
+      incSub: { eng: "", lang2: "", sport: "понякога клубове в сградата", music: "" },
+      note: r[6] });
+  });
+
+  var SUPP_INC = { espa: true, izzi: true, svsofia: true };
+  var XKEYS = ["x-bday", "x-teach", "x-trips", "x-camp", "x-supp", "x-gear", "x-events"];
+  var GROUPS = [["near", "Частни, до 2 км"], ["far", "Частни, по-далеч"], ["state", "Държавни"]];
+  var DEFAULTS = { "on-eng": true, "p-eng": 115, "n-eng": 2, "on-sport": true, "p-sport": 67, "n-sport": 1, "on-music": true, "p-music": 124, "n-music": 1,
+    "use-time": true, rate: 20, trip: 1, minkm: 3, infl: 6, "food-p": 8, "food-s": 3,
+    "x-bday": 100, "x-teach": 40, "x-trips": 150, "x-camp": 250, "x-supp": 100, "x-gear": 150, "x-events": 50 };
+  var KEY = "pg6-calc-v1";
+
+  function eur(x) { return "€" + String(Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+  function el(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat(el(id).value); return isFinite(v) && v >= 0 ? v : 0; }
+
+  function readInputs() {
+    var p = {};
+    Object.keys(DEFAULTS).forEach(function (k) {
+      var node = el(k);
+      p[k] = node.type === "checkbox" ? node.checked : num(k);
+    });
+    return p;
+  }
+
+  // Pure cost model for one school, one year. Returns money parts, hours and flags.
+  function cost(s, p) {
+    var g = 1 + p.infl / 100;
+    var out = { fee: 0, food: 0, once: 0, extra: 0, hours: 0, timeCost: 0, estFood: false };
+    if (s.fee == null) return null;
+    out.fee = s.fee * g;
+    if (s.food == null) {
+      out.food = (s.grp === "state" ? p["food-s"] : p["food-p"]) * DAYS;
+      out.estFood = true;
+    } else {
+      out.food = s.food * g;
+    }
+    out.once = s.once || 0;
+    var leg = LEG_FIX + p.minkm * s.km;
+    out.hours = 4 * leg * DAYS / 60;
+    ACTS.forEach(function (a) {
+      if (!p["on-" + a]) return;
+      var mode = s.inc[a];
+      var market = p["p-" + a] * MONTHS * g;
+      if (mode === "inc") return;
+      if (mode === "paid") { out.extra += (s.paid[a] != null ? s.paid[a] * g : market); return; }
+      out.extra += market;
+      out.hours += p["n-" + a] * WEEKS * p.trip;
+    });
+    out.money = out.fee + out.food + out.once + out.extra;
+    out.timeCost = out.hours * p.rate;
+    out.total = out.money + (p["use-time"] ? out.timeCost : 0);
+    return out;
+  }
+  window.__pg6cost = cost;
+
+  function renderBars(p) {
+    var rows = SCHOOLS.map(function (s) { return { s: s, c: cost(s, p) }; }).filter(function (r) { return r.c; });
+    var max = rows.reduce(function (m, r) { return Math.max(m, r.c.total); }, 1);
+    var html = "";
+    GROUPS.forEach(function (gp) {
+      var list = rows.filter(function (r) { return r.s.grp === gp[0]; }).sort(function (a, b) { return a.c.total - b.c.total; });
+      if (!list.length) return;
+      html += '<div class="group-label">' + gp[1] + "</div>";
+      list.forEach(function (r) {
+        var c = r.c, s = r.s;
+        function seg(cls, v, label) { return v > 0 ? '<i class="' + cls + '" style="width:' + (v / max * 100).toFixed(2) + '%" title="' + label + ": " + eur(v) + '"></i>' : ""; }
+        var segs = seg("seg-fee", c.fee, "Такса") + seg("seg-food", c.food, "Храна") + seg("seg-once", c.once, "Еднократно") + seg("seg-extra", c.extra, "Занимания") +
+          (p["use-time"] ? seg("seg-time", c.timeCost, "Време " + Math.round(c.hours) + " ч") : "");
+        var flags = [];
+        if (s.blocked) flags.push('<span class="flag red">Не приема директно за ПГ-6</span>');
+        else if (s.feeEst) flags.push('<span class="flag">' + (s.id === "brit" ? "Обща сума от вторичен източник" : s.id === "vh" ? "Таксата е ориентировъчна" : "Таксата е по I клас") + "</span>");
+        html += '<div class="bar-row' + (s.blocked ? " off" : "") + '">' +
+          '<div class="who"><b>' + s.name + "</b><span>" + s.km.toFixed(1) + " км · " + (s.rank ? s.rank + "-о място НВО" : "френска програма") + "</span></div>" +
+          '<div class="track" role="img" aria-label="' + s.full + ": " + eur(c.total) + '">' + segs + "</div>" +
+          '<div class="tot num">' + eur(p["use-time"] ? c.total : c.money) + "<small>" + (p["use-time"] ? "пари " + eur(c.money) + " · " + Math.round(c.hours) + " ч" : "без времето") + "</small></div>" +
+          flags.join("") + "</div>";
+      });
+    });
+    el("bars").innerHTML = html;
+  }
+
+  function nvoCell(s) {
+    if (!s.nvo) return '<span class="sub">не се явяват</span>';
+    return '<div class="nvo"><span class="num">' + s.nvo.toFixed(2).replace(".", ",") + " · " + s.rank + "-о</span>" +
+      '<span class="meter"><i style="width:' + Math.max(0, (s.nvo - 70) / 30 * 100).toFixed(1) + '%"></i></span></div>';
+  }
+  function money(txt, sub, est) { return '<td class="money"><span class="' + (est ? "est" : "") + '">' + txt + "</span>" + (sub ? '<span class="sub">' + sub + "</span>" : "") + "</td>"; }
+
+  function foodMode(s) {
+    if (s.fee == null) return "unk";
+    if (s.food == null) return "none";
+    if (s.food > 0) return "sep";
+    return s.id === "brit" ? "assumed" : "incl";
+  }
+  var FOOD_CHIP = {
+    sep: '<span class="chip green">с храна</span>',
+    incl: '<span class="chip green">храната е в таксата</span>',
+    assumed: '<span class="chip amber">храната вероятно е в сумата</span>',
+    none: '<span class="chip amber">без храна</span>'
+  };
+  function dayTxt(v) { return String(v).replace(".", ","); }
+
+  function monthCell(s, p) {
+    var m = foodMode(s);
+    if (m === "unk") return '<td class="money"><span class="est">?</span><span class="sub">по запитване</span></td>';
+    var base = (s.fee + (s.food || 0)) / 12, sub = "";
+    if (m === "none") {
+      var day = s.grp === "state" ? p["food-s"] : p["food-p"];
+      sub = '<span class="sub">с храна по оценка (€' + dayTxt(day) + "/ден): ~" + eur(base + day * DAYS / 12) + "</span>";
+    }
+    return '<td class="money"><span>' + eur(base) + '</span><span class="sub">' + FOOD_CHIP[m] + "</span>" + sub + "</td>";
+  }
+
+  function renderBudget(p) {
+    var addAll = XKEYS.reduce(function (a, k) { return a + p[k]; }, 0);
+    el("x-total").textContent = eur(addAll);
+    el("x-month").textContent = eur(addAll / 12);
+    var anyAct = ACTS.some(function (a) { return p["on-" + a]; });
+    var h = "<thead><tr><th>Училище</th><th>Такса и храна</th><th>Занимания</th><th>Допълнителни</th><th>Общо на месец</th><th>Еднократно в началото</th></tr></thead><tbody>";
+    GROUPS.forEach(function (gp) {
+      h += '<tr class="grp"><th colspan="6">' + gp[1] + "</th></tr>";
+      SCHOOLS.filter(function (s) { return s.grp === gp[0]; }).map(function (s) {
+        var c = cost(s, p);
+        if (!c) return { s: s, c: null, tot: Infinity };
+        var add = addAll - (SUPP_INC[s.id] ? p["x-supp"] : 0);
+        var ff = (c.fee + c.food) / 12, ex = c.extra / 12, ad = add / 12;
+        return { s: s, c: c, ff: ff, ex: ex, ad: ad, tot: ff + ex + ad };
+      }).sort(function (a, b) { return a.tot - b.tot; }).forEach(function (r) {
+        var s = r.s;
+        var who = '<td class="school"><b>' + s.full + "</b><span>" + s.km.toFixed(1) + " км</span>" + (s.blocked ? '<span class="sub"><span class="chip red">не приема за ПГ-6</span></span>' : "") + "</td>";
+        if (!r.c) { h += "<tr>" + who + '<td colspan="5"><span class="est">таксите не са публикувани</span></td></tr>'; return; }
+        var m = foodMode(s);
+        var foodNote = m === "none" ? "храна по оценка €" + dayTxt(s.grp === "state" ? p["food-s"] : p["food-p"]) + "/ден" :
+          m === "sep" ? "храна по ценоразпис" : m === "incl" ? "храната е в таксата" : "храната вероятно е в сумата";
+        var startParts = [];
+        if (s.once > 0) startParts.push(eur(s.once));
+        if (s.dep && s.dep !== "-" && s.dep !== "?") startParts.push("депозит " + s.dep);
+        h += "<tr>" + who +
+          '<td class="money"><span' + (m === "none" || s.feeEst ? ' class="est"' : "") + ">" + eur(r.ff) + '</span><span class="sub">' + foodNote + "</span></td>" +
+          '<td class="money"><span>' + (r.ex > 0 ? eur(r.ex) : anyAct ? "в таксата" : "-") + "</span></td>" +
+          '<td class="money"><span>' + eur(r.ad) + "</span>" + (SUPP_INC[s.id] ? '<span class="sub">без пособия</span>' : "") + "</td>" +
+          '<td class="big">' + eur(r.tot) + "</td>" +
+          '<td class="money"><span>' + (startParts.length ? startParts.join(" · ") : "-") + "</span></td></tr>";
+      });
+    });
+    el("t-budget").innerHTML = h + "</tbody>";
+  }
+
+  function renderMoney(p) {
+    var h = "<thead><tr><th>Училище</th><th>Разстояние</th><th>НВО 4 кл. 2026</th><th>Такса 2026/27</th><th>Храна</th><th>Средно на месец</th><th>Еднократно</th><th>Депозит</th><th>Учебен ден</th><th>Прием</th><th>Бележка</th></tr></thead><tbody>";
+    GROUPS.forEach(function (gp) {
+      h += '<tr class="grp"><th colspan="11">' + gp[1] + "</th></tr>";
+      SCHOOLS.filter(function (s) { return s.grp === gp[0]; }).sort(function (a, b) { return a.km - b.km; }).forEach(function (s) {
+        h += "<tr>" +
+          '<td class="school"><b>' + s.full + "</b><span>" + s.area + "</span></td>" +
+          '<td class="money">' + s.km.toFixed(1) + " км</td>" +
+          "<td>" + nvoCell(s) + "</td>" +
+          money(s.feeTxt, s.feeSub, s.feeEst || s.nofee) +
+          money(s.foodTxt, s.foodSub, s.food == null) +
+          monthCell(s, p) +
+          money(s.onceTxt, s.onceSub) +
+          money(s.dep, s.depSub) +
+          "<td>" + s.day + "</td>" +
+          "<td>" + (s.blocked ? '<span class="chip red">' + s.admit + "</span>" : s.admit) + "</td>" +
+          "<td>" + (s.note || "") + "</td></tr>";
+      });
+    });
+    el("t-money").innerHTML = h + "</tbody>";
+  }
+
+  var SYM = { inc: ["inc", "✓"], paid: ["paid", "€"], out: ["out", "✕"], unk: ["unk", "?"] };
+  function incCell(s, k) {
+    var m = SYM[s.inc[k]] || SYM.unk, sub = s.incSub[k] || "";
+    return '<td><span class="cell"><span class="sym ' + m[0] + '" aria-label="' + m[0] + '">' + m[1] + "</span><span>" + (sub ? '<span class="sub" style="margin:0">' + sub + "</span>" : "") + "</span></span></td>";
+  }
+  function renderInc() {
+    var h = "<thead><tr><th>Училище</th><th>Английски</th><th>Втори език</th><th>Спорт</th><th>Музика, пиано</th><th>Учебен ден</th></tr></thead><tbody>";
+    GROUPS.forEach(function (gp) {
+      h += '<tr class="grp"><th colspan="6">' + gp[1] + "</th></tr>";
+      SCHOOLS.filter(function (s) { return s.grp === gp[0]; }).sort(function (a, b) { return a.km - b.km; }).forEach(function (s) {
+        h += '<tr><td class="school"><b>' + s.full + "</b><span>" + s.km.toFixed(1) + " км</span></td>" +
+          incCell(s, "eng") + incCell(s, "lang2") + incCell(s, "sport") + incCell(s, "music") + "<td>" + s.day + "</td></tr>";
+      });
+    });
+    el("t-inc").innerHTML = h + "</tbody>";
+  }
+
+  function save(p) { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY); if (!raw) return;
+      var p = JSON.parse(raw);
+      Object.keys(DEFAULTS).forEach(function (k) {
+        if (!(k in p)) return;
+        var node = el(k);
+        if (node.type === "checkbox") node.checked = !!p[k]; else node.value = p[k];
+      });
+    } catch (e) {}
+  }
+  function update() { var p = readInputs(); renderBars(p); renderMoney(p); renderBudget(p); save(p); }
+
+  load();
+  renderInc();
+  update();
+  ["controls", "xform"].forEach(function (id) {
+    el(id).addEventListener("input", update);
+    el(id).addEventListener("change", update);
+    el(id).addEventListener("submit", function (e) { e.preventDefault(); });
+  });
+  el("reset").addEventListener("click", function () {
+    Object.keys(DEFAULTS).forEach(function (k) {
+      var node = el(k);
+      if (node.type === "checkbox") node.checked = DEFAULTS[k]; else node.value = DEFAULTS[k];
+    });
+    update();
+  });
+})();
+</script>
+
+</body>
+</html>
